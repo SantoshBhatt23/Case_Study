@@ -17,7 +17,7 @@ void printLexico(char str[])
         
     }
     if(flag==0){
-        printf("No answer\n");
+        printf("No answer");
         return;
     }
     //finding smallest char greater than str[pivot] in substring ahead of pivot;and swap
@@ -46,10 +46,19 @@ void printLexico(char str[])
 }
 int main()
 {
-    //first taking a word
-    char str[101];
-    fgets(str,101,stdin);
-    fflush(stdin);
-    //printing lexicographically gr8r
-    printLexico(str);
+    int t;
+    scanf("%d",&t);
+    getchar();
+    while(t--)
+    {
+        //first taking a word
+        char str[101];
+        fgets(str,101,stdin);
+        fflush(stdin);
+        str[strcspn(str,"\n")] = '\0';
+        //printing lexicographically gr8r
+        printLexico(str);
+        printf("\n");
+    }
+    return 0;
 }
